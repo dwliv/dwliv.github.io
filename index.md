@@ -1,6 +1,7 @@
 # Comp Sci 30
 
 ## Demos
--Moving Sqaure
+- [Moving Square](moving-square)
 
 ## Projects
+- [In=nteractive Scene](interactive-scene)
