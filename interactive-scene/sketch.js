@@ -38,7 +38,7 @@ function draw() {
   if(ycor>= height-20||ycor === 20) {
     dy = -dy;
   }
-  fill("black")
+  fill("black");
   text("PING PONG", 150, 25);
   
   //creates the dashed line down the middle
