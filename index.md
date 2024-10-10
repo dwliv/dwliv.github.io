@@ -8,6 +8,8 @@
 - [Genrative Art](art)
 - [Perlin Noise Ball](perlin)
 - [Terrain Genration](terrain)
+- [Bubble Object Demo](bubble)
+
 ## Projects
 - [Interactive Scene](interactive-scene)
 - [Arrays and Object Notation](array-object)
