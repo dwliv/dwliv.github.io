@@ -5,11 +5,8 @@
 // Extra for Experts:
 // - describe what you did to take this project "above and beyond"
 
-let bg;
-
-function preLoad() {
-  bg = loadImage("game.jpg");
-}
+const CHOICE = ["Rock", "Paper", "Scissors"];
+const DEFAULT_CHOICE = ["Rock"];
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -17,5 +14,8 @@ function setup() {
 
 function draw() {
   background(220);
-  image(bg, bg.width * 0.5, bg.height * 0.5);
+}
+
+function startGame(CHOICE, DEFAULT_CHOICE) {
+  let player_choice = prompt("Please pick Rock or Paper or Scissors .");
 }
