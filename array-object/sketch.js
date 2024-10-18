@@ -5,53 +5,53 @@
 // Extra for Experts:
 // - describe what you did to take this project "above and beyond"
 
-let bx = 200;  
-let by = 200; 
-let dx = 5; 
-let dy = 3; 
-let ballSize = 10;
-let obstacleArray = [];
+let turtles;
+let finishLine;
+let winner;
+let r = 200;
+let b = 200;
+let g = 255;
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(800, 500);
+  finishLine = width - 50;
+  resetRace();
 }
 
 function draw() {
-  background(220);
-  displayrects();
-  player();
-  ballSize();
-}
-
-function player() {
-
-}
-
-function spawnObsticles() {
-  let someRect = {
-    x: random(0, width),
-    y: height + random(0, 50),
-    speed: random(2, 5),
-    radius: random(20, 50),
-    r: random(255),
-    g: random(255),
-    b: random(255),
-    alpha: random(255),
-    timeX: random(100000000),
-    timeY: random(100000000),
-    deltaTime: 0.006,
-  };
-  theBubbles.push(someBubble);
-}
-
-function clickedOnBubble(x, y, theBubble) {
-  let distanceAway = dist(x, y, theBubble.x, theBubble.y); 
-  return distanceAway < theBubble.radius;
-}
-function displayrects() {
-  for (let bubble of theBubbles) {
+  background(r, g, b);
+  stroke(0);
+  line(finishLine, 0, finishLine, height);
+  for(let turtle of turtles) {
+    fill(turtle.color);
     noStroke();
-    fill(bubble.r, bubble.g, bubble.b, bubble.alpha);
-    circle(bubble.x, bubble.y, bubble.radius * 2);
+    ellipse(turtle.x, turtle.y, 50, 50);  
+    turtle.x += random(1, 4);
+    if (turtle.x >= finishLine && !winner) {
+      winner = turtle.color;
+    }
+  }
+  if (winner) {
+    textSize(35);
+    fill(0);
+    text(winner + " wins!", 50, height / 2);
+    noLoop(); //stops the draw loop
   }
 }
+
+function resetRace() {
+  turtles = [
+    {x: 50, y: 100, color: "red" },
+    {x: 50, y: 200, color: "blue" },
+    {x: 50, y: 300, color: "green" },
+    {x:50, y:400, color: "purple" },
+  ];
+  winner = null; // no value for now
+}
+function keyPressed() {
+  if (winner) {
+    resetRace;
+    loop();//restarts the draw loop
+  }
+}
+
