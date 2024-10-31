@@ -14,6 +14,10 @@ let player;
 let gem;
 let score = 0;
 
+function preload() {
+  gemImg = loadImage("gem.png");
+}
+
 function setup() {
   createCanvas(cols * cellSize, rows * cellSize);
   player = createVector(0, 0);
@@ -33,10 +37,31 @@ function draw() {
   rect(player.x * cellSize, player.y*cellSize, cellSize, cellSize);
 
   fill(255,0,255);
-  rect(gem.x*cellSize, gem.y*cellSize, cellSize, cellSize);
+  image(gemImg, player.x, player.y, cellSize, cellSize);
 
+  fill(0);
   textSize(15);
-  
+  text('Score $(score)', 10, height-10);
+}
+
+function keyPressed() {
+  if (key === 'a' && player.x > 0) {
+    player.x--;
+  }
+  else if (key === 'd' && player.x < cols - 1) {
+    player.x++;
+  }
+  else if (key === 'w' && player.y > 0) {
+    player.y--;
+  }
+  else if (key === 's' && player.y < rows - 1) {
+    player.y++;
+  }
+
+  if (player.x === gem.png && player.y === gem.png.y) {
+    score++;
+    placeGem();
+  }
 }
 
 function placeGem() {
