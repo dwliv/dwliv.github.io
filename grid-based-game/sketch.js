@@ -8,7 +8,7 @@
 
 let cols = 10;
 let rows  = 10;
-let cellSize = 25;
+let cellSize = 50;
 
 let player;
 let gem;

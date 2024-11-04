@@ -95,7 +95,7 @@ function keyPressed() {
     //move down
     movePlayer(player.x, player.y + 1);
   }
-  if (key === "d" || key === "f") {
+  if (key === "d") {
     //move right
     movePlayer(player.x + 1, player.y);
   }
