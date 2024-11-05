@@ -41,7 +41,7 @@ function draw() {
 
   fill(0);
   textSize(15);
-  text('Score $(score)', 10, height-10);
+  text('Score: 0', 10, height-10);
 }
 
 function keyPressed() {
@@ -58,7 +58,7 @@ function keyPressed() {
     player.y++;
   }
 
-  if (player.x === gem.png && player.y === gem.png.y) {
+  if (player.x === gem.png.x && player.y === gem.png.y) {
     score++;
     placeGem();
   }
