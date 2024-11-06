@@ -14,10 +14,6 @@ let player;
 let gem;
 let score = 0;
 
-function preload() {
-  gemImg = loadImage("gem.png");
-}
-
 function setup() {
   createCanvas(cols * cellSize, rows * cellSize);
   player = createVector(0, 0);
@@ -25,6 +21,10 @@ function setup() {
 }
 
 function draw() {
+  startGame();
+}
+
+function startGame() {
   background(220);
   stroke(0);
   for(let i = 0; i < cols; i++) {
@@ -41,7 +41,7 @@ function draw() {
 
   fill(0);
   textSize(15);
-  text('Score: 0', 10, height-10);
+  text('Score: 0', 10, height - 10);
 }
 
 function keyPressed() {
@@ -58,7 +58,7 @@ function keyPressed() {
     player.y++;
   }
 
-  if (player.x === gem.png.x && player.y === gem.png.y) {
+  if (player.x === gem.x && player.y === gem.y) {
     score++;
     placeGem();
   }
