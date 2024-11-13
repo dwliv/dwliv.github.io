@@ -8,7 +8,7 @@
 
 let cols = 10;
 let rows  = 10;
-let cellSize = 50;
+let cellSize = 40;
 
 let player;
 let gem;
@@ -21,11 +21,11 @@ function setup() {
 }
 
 function draw() {
+  background(220);
   startGame();
 }
 
 function startGame() {
-  background(220);
   stroke(0);
   for(let i = 0; i < cols; i++) {
     for(let j = 0; j < rows; j++) {
@@ -37,11 +37,11 @@ function startGame() {
   rect(player.x * cellSize, player.y*cellSize, cellSize, cellSize);
 
   fill(255,0,255);
-  image(gemImg, player.x, player.y, cellSize, cellSize);
+  rect(gem.x * cellSize, gem.y * cellSize, cellSize, cellSize);
 
   fill(0);
-  textSize(15);
-  text('Score: 0', 10, height - 10);
+  textSize(25);
+  text(`Score: ${score}`, 10, height - 10);
 }
 
 function keyPressed() {
