@@ -13,9 +13,15 @@ let cellSize = 50;
 let player;
 let gem;
 let score = 0;
+let music;
+
+function preload() {
+  music = loadSound("grid.mp3");
+}
 
 function setup() {
   createCanvas(cols * cellSize, rows * cellSize);
+  music.amp(0.3);
   //Starting position
   player = createVector(0, 0);
   
@@ -52,7 +58,7 @@ function startGame() {
   //scoreboard letter size is 25
   textSize(25);
   
-  //scoreboard at the width of 10 and height - 10
+  //scoreboard at the bottom left of the canvas
   text(`Score: ${score}`, 10, height - 10);
 }
 
