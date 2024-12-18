@@ -20,8 +20,8 @@
 - [Collide 2d](collide)
 - [Local Storage Demo](local-storage)
 - [Inheritance Demo](inheritance)
+- [Fractal Circles](fractal-circle)
 ## Projects
 - [Interactive Scene](interactive-scene)
 - [Arrays and Object Notation](array-object)
 - [Grid-Based Game](grid-based-game)
-- 
